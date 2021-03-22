@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		57C9EE8C2608DBF900D7107B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 57C9EE8B2608DBF900D7107B /* README.md */; };
+		57C9EE992608DDFD00D7107B /* MetalScopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9EE982608DDFD00D7107B /* MetalScopeTests.swift */; };
+		57C9EE9B2608DDFD00D7107B /* MetalScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB891781E2E013400FA9129 /* MetalScope.framework */; };
 		BF1452DF1E320BAC0042598E /* SceneLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1452DE1E320BAC0042598E /* SceneLoadable.swift */; };
 		BF1453061E321CE30042598E /* CategoryBitMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1453051E321CE30042598E /* CategoryBitMask.swift */; };
 		BF1F1D381EAF6A53004AEEB4 /* PanoramaPanGestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8922F1E2F761600FA9129 /* PanoramaPanGestureManager.swift */; };
@@ -47,8 +49,21 @@
 		BFFE23891E409046006097A1 /* MediaFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE23881E409046006097A1 /* MediaFormat.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		57C9EE9C2608DDFD00D7107B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFB8916F1E2E013400FA9129 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFB891771E2E013400FA9129;
+			remoteInfo = MetalScope;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		57C9EE8B2608DBF900D7107B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		57C9EE962608DDFD00D7107B /* MetalScopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalScopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57C9EE982608DDFD00D7107B /* MetalScopeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalScopeTests.swift; sourceTree = "<group>"; };
+		57C9EE9A2608DDFD00D7107B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1452DE1E320BAC0042598E /* SceneLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SceneLoadable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BF1453051E321CE30042598E /* CategoryBitMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CategoryBitMask.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BF46F0991EADDEDA00F5CB58 /* Deprecations+Removals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Deprecations+Removals.swift"; sourceTree = "<group>"; };
@@ -91,6 +106,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		57C9EE932608DDFD00D7107B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57C9EE9B2608DDFD00D7107B /* MetalScope.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFB891741E2E013400FA9129 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -107,6 +130,23 @@
 				BFB8917A1E2E013400FA9129 /* MetalScopePackage */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		57C9EE972608DDFD00D7107B /* MetalScopeTests */ = {
+			isa = PBXGroup;
+			children = (
+				57C9EE982608DDFD00D7107B /* MetalScopeTests.swift */,
+				57C9EE9A2608DDFD00D7107B /* Info.plist */,
+			);
+			path = MetalScopeTests;
+			sourceTree = "<group>";
+		};
+		57C9EEA32608DE3900D7107B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				57C9EE972608DDFD00D7107B /* MetalScopeTests */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		BF4B3D291E420D95005BE575 /* UI */ = {
@@ -148,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				57C9EE902608DD9500D7107B /* Sources */,
+				57C9EEA32608DE3900D7107B /* Tests */,
 				57C9EE8B2608DBF900D7107B /* README.md */,
 				BFB891791E2E013400FA9129 /* Products */,
 			);
@@ -161,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB891781E2E013400FA9129 /* MetalScope.framework */,
+				57C9EE962608DDFD00D7107B /* MetalScopeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,6 +287,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		57C9EE952608DDFD00D7107B /* MetalScopeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57C9EE9E2608DDFD00D7107B /* Build configuration list for PBXNativeTarget "MetalScopeTests" */;
+			buildPhases = (
+				57C9EE922608DDFD00D7107B /* Sources */,
+				57C9EE932608DDFD00D7107B /* Frameworks */,
+				57C9EE942608DDFD00D7107B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57C9EE9D2608DDFD00D7107B /* PBXTargetDependency */,
+			);
+			name = MetalScopeTests;
+			productName = MetalScopeTests;
+			productReference = 57C9EE962608DDFD00D7107B /* MetalScopeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BFB891771E2E013400FA9129 /* MetalScope */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFB891801E2E013400FA9129 /* Build configuration list for PBXNativeTarget "MetalScope" */;
@@ -269,9 +329,15 @@
 		BFB8916F1E2E013400FA9129 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "eje Inc.";
 				TargetAttributes = {
+					57C9EE952608DDFD00D7107B = {
+						CreatedOnToolsVersion = 12.4;
+						DevelopmentTeam = 7JP8NP67JM;
+						ProvisioningStyle = Automatic;
+					};
 					BFB891771E2E013400FA9129 = {
 						CreatedOnToolsVersion = 8.2.1;
 						LastSwiftMigration = 1240;
@@ -293,11 +359,19 @@
 			projectRoot = "";
 			targets = (
 				BFB891771E2E013400FA9129 /* MetalScope */,
+				57C9EE952608DDFD00D7107B /* MetalScopeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		57C9EE942608DDFD00D7107B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFB891761E2E013400FA9129 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,6 +384,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		57C9EE922608DDFD00D7107B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57C9EE992608DDFD00D7107B /* MetalScopeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFB891731E2E013400FA9129 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,7 +436,60 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		57C9EE9D2608DDFD00D7107B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFB891771E2E013400FA9129 /* MetalScope */;
+			targetProxy = 57C9EE9C2608DDFD00D7107B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		57C9EE9F2608DDFD00D7107B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JP8NP67JM;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/MetalScopeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = joig.MetalScopeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		57C9EEA02608DDFD00D7107B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JP8NP67JM;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/MetalScopeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = joig.MetalScopeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		BFB8917E1E2E013400FA9129 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -518,6 +653,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		57C9EE9E2608DDFD00D7107B /* Build configuration list for PBXNativeTarget "MetalScopeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57C9EE9F2608DDFD00D7107B /* Debug */,
+				57C9EEA02608DDFD00D7107B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BFB891721E2E013400FA9129 /* Build configuration list for PBXProject "MetalScope" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
