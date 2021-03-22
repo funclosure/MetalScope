@@ -120,7 +120,9 @@ public final class PlayerItemRenderer {
         let sourceSize = MTLSizeMake(sourceTexture.width, sourceTexture.height, sourceTexture.depth)
         let destinationOrigin = MTLOriginMake(0, 0, 0)
 
-        let blitCommandEncoder = commandBuffer.makeBlitCommandEncoder()
+        guard let blitCommandEncoder = commandBuffer.makeBlitCommandEncoder() else {
+            fatalError("Failed to make blit command encoder")
+        }
         blitCommandEncoder.copy(from: sourceTexture, sourceSlice: 0, sourceLevel: 0, sourceOrigin: sourceOrigin, sourceSize: sourceSize, to: texture, destinationSlice: 0, destinationLevel: 0, destinationOrigin: destinationOrigin)
         blitCommandEncoder.endEncoding()
     }
