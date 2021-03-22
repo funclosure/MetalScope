@@ -51,9 +51,14 @@ internal final class StereoRenderer {
         )
         eyeTextureDescriptor.usage = .renderTarget
 
+        guard let leftTexture = device.makeTexture(descriptor: eyeTextureDescriptor),
+              let rightTexture = device.makeTexture(descriptor: eyeTextureDescriptor) else {
+            fatalError("Failed to make device textures")
+        }
+        
         eyeRenderingConfigurations = [
-            .left: EyeRenderingConfiguration(texture: device.makeTexture(descriptor: eyeTextureDescriptor)),
-            .right: EyeRenderingConfiguration(texture: device.makeTexture(descriptor: eyeTextureDescriptor))
+            .left: EyeRenderingConfiguration(texture: leftTexture),
+            .right: EyeRenderingConfiguration(texture: rightTexture)
         ]
     }
 
@@ -75,7 +80,9 @@ internal final class StereoRenderer {
         for (eye, configuration) in eyeRenderingConfigurations {
             semaphore.wait()
 
-            let commandBuffer = commandQueue.makeCommandBuffer()
+            guard let commandBuffer = commandQueue.makeCommandBuffer() else {
+                fatalError("Failed to make command queue")
+            }
 
             rendererDelegateProxy.currentRenderingEye = eye
 
@@ -99,7 +106,9 @@ internal final class StereoRenderer {
                 destinationOrigin = MTLOrigin(x: outputTexture.width / 2, y: 0, z: 0)
             }
 
-            let blitCommandEncoder = commandBuffer.makeBlitCommandEncoder()
+            guard let blitCommandEncoder = commandBuffer.makeBlitCommandEncoder() else {
+                fatalError("Failed to make blit command encoder")
+            }
             blitCommandEncoder.copy(
                 from: texture,
                 sourceSlice: 0,
@@ -137,6 +146,8 @@ extension MTLCommandBufferStatus: CustomStringConvertible {
             return "notEnqueued"
         case .scheduled:
             return "scheduled"
+        @unknown default:
+            return "unknown status"
         }
     }
 }

@@ -75,7 +75,10 @@ public final class MonoSphericalVideoScene: MonoSphericalMediaScene, VideoScene 
 
     public init(renderer: PlayerRenderer) {
         self.renderer = renderer
-        commandQueue = renderer.device.makeCommandQueue()
+        guard let commandQueue = renderer.device.makeCommandQueue() else {
+            fatalError("Failed to make command queue")
+        }
+        self.commandQueue = commandQueue
         super.init()
         renderLoop.resume()
     }
@@ -115,7 +118,9 @@ public final class MonoSphericalVideoScene: MonoSphericalMediaScene, VideoScene 
         }
 
         do {
-            let commandBuffer = (commandQueue ?? self.commandQueue).makeCommandBuffer()
+            guard let commandBuffer = (commandQueue ?? self.commandQueue).makeCommandBuffer() else {
+                fatalError("Failed to make command buffer")
+            }
             try renderer.render(atHostTime: time, to: texture, commandBuffer: commandBuffer)
             commandBuffer.commit()
         } catch let error as CVError {
@@ -163,7 +168,10 @@ public final class StereoSphericalVideoScene: StereoSphericalMediaScene, VideoSc
 
     public init(renderer: PlayerRenderer) {
         self.renderer = renderer
-        commandQueue = renderer.device.makeCommandQueue()
+        guard let commandQueue = renderer.device.makeCommandQueue() else {
+            fatalError("Failed to make command queue")
+        }
+        self.commandQueue = commandQueue
         super.init()
         renderLoop.resume()
     }
@@ -206,13 +214,17 @@ public final class StereoSphericalVideoScene: StereoSphericalMediaScene, VideoSc
             return
         }
 
-        let commandBuffer = (commandQueue ?? self.commandQueue).makeCommandBuffer()
+        guard let commandBuffer = (commandQueue ?? self.commandQueue).makeCommandBuffer() else {
+            fatalError("Failed to make command buffer")
+        }
 
         do {
             try renderer.render(atHostTime: time, to: playerTexture, commandBuffer: commandBuffer)
 
             func copyPlayerTexture(region: MTLRegion, to sphereTexture: MTLTexture) {
-                let blitCommandEncoder = commandBuffer.makeBlitCommandEncoder()
+                guard let blitCommandEncoder = commandBuffer.makeBlitCommandEncoder() else {
+                    fatalError("Failed to make blit command encoder")
+                }
                 blitCommandEncoder.copy(
                     from: playerTexture,
                     sourceSlice: 0,
