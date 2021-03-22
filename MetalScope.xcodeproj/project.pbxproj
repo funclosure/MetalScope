@@ -101,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57C9EE902608DD9500D7107B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BFB8917A1E2E013400FA9129 /* MetalScopePackage */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		BF4B3D291E420D95005BE575 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +147,8 @@
 		BFB8916E1E2E013400FA9129 = {
 			isa = PBXGroup;
 			children = (
+				57C9EE902608DD9500D7107B /* Sources */,
 				57C9EE8B2608DBF900D7107B /* README.md */,
-				BFB8917A1E2E013400FA9129 /* MetalScopePackage */,
 				BFB891791E2E013400FA9129 /* Products */,
 			);
 			indentWidth = 4;
@@ -473,7 +481,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MetalScopePackage/Info.plist;
+				INFOPLIST_FILE = Sources/MetalScopePackage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eje-c.MetalScope";
@@ -496,7 +504,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MetalScopePackage/Info.plist;
+				INFOPLIST_FILE = Sources/MetalScopePackage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eje-c.MetalScope";
