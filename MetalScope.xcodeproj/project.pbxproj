@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		574999772608F14D00204E3B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 574999762608F14D00204E3B /* README.md */; };
 		BF1452DF1E320BAC0042598E /* SceneLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1452DE1E320BAC0042598E /* SceneLoadable.swift */; };
 		BF1453061E321CE30042598E /* CategoryBitMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1453051E321CE30042598E /* CategoryBitMask.swift */; };
 		BF1F1D381EAF6A53004AEEB4 /* PanoramaPanGestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8922F1E2F761600FA9129 /* PanoramaPanGestureManager.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		574999762608F14D00204E3B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BF1452DE1E320BAC0042598E /* SceneLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SceneLoadable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BF1453051E321CE30042598E /* CategoryBitMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CategoryBitMask.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BF46F0991EADDEDA00F5CB58 /* Deprecations+Removals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Deprecations+Removals.swift"; sourceTree = "<group>"; };
@@ -99,12 +101,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5749997E2608F20300204E3B /* MetalScopePackage */ = {
+			isa = PBXGroup;
+			children = (
+				BFB8917B1E2E013400FA9129 /* MetalScope.h */,
+				BF46F0991EADDEDA00F5CB58 /* Deprecations+Removals.swift */,
+				BFDF48B81E8A52E200FC7A74 /* PanoramaView */,
+				BFAB12FD1E35B82D00A1642C /* StereoView */,
+				BFB891921E2E04EB00FA9129 /* OrientationNode */,
+				BFB891B31E2E1EEA00FA9129 /* Media */,
+				BF4B3D291E420D95005BE575 /* UI */,
+				BF9B15B71E44B50A004CC8CE /* Utilities */,
+				BFB8917C1E2E013400FA9129 /* Info.plist */,
+				BFAB13151E363ACD00A1642C /* Assets.xcassets */,
+			);
+			path = MetalScopePackage;
+			sourceTree = "<group>";
+		};
 		BF4B3D291E420D95005BE575 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				BF603F541E41B57600A28013 /* OrientationIndicator.swift */,
 			);
 			name = UI;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BF9B15B71E44B50A004CC8CE /* Utilities */ = {
@@ -114,6 +134,7 @@
 				BF9B15B51E44B4B1004CC8CE /* KeyValueObserver.swift */,
 			);
 			name = Utilities;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BFAB12FD1E35B82D00A1642C /* StereoView */ = {
@@ -132,11 +153,13 @@
 				BFAB13001E35B97500A1642C /* Eye.swift */,
 			);
 			name = StereoView;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BFB8916E1E2E013400FA9129 = {
 			isa = PBXGroup;
 			children = (
+				574999762608F14D00204E3B /* README.md */,
 				BFB8917A1E2E013400FA9129 /* Sources */,
 				BFB891791E2E013400FA9129 /* Products */,
 			);
@@ -157,16 +180,7 @@
 		BFB8917A1E2E013400FA9129 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BFB8917B1E2E013400FA9129 /* MetalScope.h */,
-				BF46F0991EADDEDA00F5CB58 /* Deprecations+Removals.swift */,
-				BFDF48B81E8A52E200FC7A74 /* PanoramaView */,
-				BFAB12FD1E35B82D00A1642C /* StereoView */,
-				BFB891921E2E04EB00FA9129 /* OrientationNode */,
-				BFB891B31E2E1EEA00FA9129 /* Media */,
-				BF4B3D291E420D95005BE575 /* UI */,
-				BF9B15B71E44B50A004CC8CE /* Utilities */,
-				BFB8917C1E2E013400FA9129 /* Info.plist */,
-				BFAB13151E363ACD00A1642C /* Assets.xcassets */,
+				5749997E2608F20300204E3B /* MetalScopePackage */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -193,6 +207,7 @@
 				BFB891A71E2E10CA00FA9129 /* Rotation+SceneKit.swift */,
 			);
 			name = OrientationNode;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BFB891B31E2E1EEA00FA9129 /* Media */ = {
@@ -209,6 +224,7 @@
 				BFB891911E2E044900FA9129 /* Video */,
 			);
 			name = Media;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BFDF48B81E8A52E200FC7A74 /* PanoramaView */ = {
@@ -218,6 +234,7 @@
 				BFB8922F1E2F761600FA9129 /* PanoramaPanGestureManager.swift */,
 			);
 			name = PanoramaView;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				574999772608F14D00204E3B /* README.md in Resources */,
 				BFAB13161E363ACD00A1642C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,7 +491,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_FILE = Sources/MetalScopePackage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -499,7 +517,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_FILE = Sources/MetalScopePackage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
