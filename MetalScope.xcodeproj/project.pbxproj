@@ -137,7 +137,7 @@
 		BFB8916E1E2E013400FA9129 = {
 			isa = PBXGroup;
 			children = (
-				BFB8917A1E2E013400FA9129 /* Sources */,
+				BFB8917A1E2E013400FA9129 /* MetalScopePackage */,
 				BFB891791E2E013400FA9129 /* Products */,
 			);
 			indentWidth = 4;
@@ -154,7 +154,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BFB8917A1E2E013400FA9129 /* Sources */ = {
+		BFB8917A1E2E013400FA9129 /* MetalScopePackage */ = {
 			isa = PBXGroup;
 			children = (
 				BFB8917B1E2E013400FA9129 /* MetalScope.h */,
@@ -168,7 +168,7 @@
 				BFB8917C1E2E013400FA9129 /* Info.plist */,
 				BFAB13151E363ACD00A1642C /* Assets.xcassets */,
 			);
-			path = Sources;
+			path = MetalScopePackage;
 			sourceTree = "<group>";
 		};
 		BFB891911E2E044900FA9129 /* Video */ = {
