@@ -34,7 +34,7 @@ public final class PanoramaView: UIView, SceneLoadable {
         return node
     }()
 
-    lazy var scnView: SCNView = {
+    public lazy var scnView: SCNView = {
         #if (arch(arm) || arch(arm64)) && os(iOS)
         let view = SCNView(frame: self.bounds, options: [
             SCNView.Option.preferredRenderingAPI.rawValue: SCNRenderingAPI.metal.rawValue,
