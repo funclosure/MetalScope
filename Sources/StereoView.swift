@@ -10,6 +10,7 @@ import UIKit
 import SceneKit
 
 public final class StereoView: UIView, SceneLoadable {
+    
     #if (arch(arm) || arch(arm64)) && os(iOS)
     public let stereoTexture: MTLTexture
 
@@ -18,6 +19,8 @@ public final class StereoView: UIView, SceneLoadable {
     }
     #endif
 
+    public var delegate: SceneLoadingDelegate?
+    
     public var scene: SCNScene? {
         didSet {
             orientationNode.removeFromParentNode()
@@ -26,6 +29,7 @@ public final class StereoView: UIView, SceneLoadable {
             #if (arch(arm) || arch(arm64)) && os(iOS)
             stereoRenderer.scene = scene
             #endif
+            delegate?.sceneDidLoad(scene)
         }
     }
 

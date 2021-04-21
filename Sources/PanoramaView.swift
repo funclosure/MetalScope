@@ -10,10 +10,12 @@ import UIKit
 import SceneKit
 
 public final class PanoramaView: UIView, SceneLoadable {
+    
     #if (arch(arm) || arch(arm64)) && os(iOS)
     public let device: MTLDevice
     #endif
-
+    public var delegate: SceneLoadingDelegate?
+    
     public var scene: SCNScene? {
         get {
             return scnView.scene
@@ -22,6 +24,7 @@ public final class PanoramaView: UIView, SceneLoadable {
             orientationNode.removeFromParentNode()
             value?.rootNode.addChildNode(orientationNode)
             scnView.scene = value
+            delegate?.sceneDidLoad(value)
         }
     }
 

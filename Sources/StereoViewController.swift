@@ -10,13 +10,17 @@ import UIKit
 import SceneKit
 
 open class StereoViewController: UIViewController, SceneLoadable {
+
     #if (arch(arm) || arch(arm64)) && os(iOS)
     public let device: MTLDevice
     #endif
 
+    public var delegate: SceneLoadingDelegate?
+    
     open var scene: SCNScene? {
         didSet {
             _stereoView?.scene = scene
+            delegate?.sceneDidLoad(scene)
         }
     }
 

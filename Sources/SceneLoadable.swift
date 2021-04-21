@@ -8,6 +8,12 @@
 
 import SceneKit
 
+public protocol SceneLoadingDelegate: class {
+    func sceneDidLoad(_ scene: SCNScene?)
+}
+
 public protocol SceneLoadable: class {
     var scene: SCNScene? { get set }
+    var delegate: SceneLoadingDelegate? {get set}
 }
+
