@@ -15,7 +15,7 @@ open class StereoViewController: UIViewController, SceneLoadable {
     public let device: MTLDevice
     #endif
 
-    public var delegate: SceneLoadingDelegate?
+    public weak var delegate: SceneLoadingDelegate?
     
     open var scene: SCNScene? {
         didSet {
