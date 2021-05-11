@@ -19,7 +19,7 @@ public final class StereoView: UIView, SceneLoadable {
     }
     #endif
 
-    public var delegate: SceneLoadingDelegate?
+    public weak var delegate: SceneLoadingDelegate?
     
     public var scene: SCNScene? {
         didSet {
