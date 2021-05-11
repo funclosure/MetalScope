@@ -44,6 +44,9 @@ public class MonoSphericalMediaScene: SCNScene {
 }
 
 public class StereoSphericalMediaScene: SCNScene {
+    
+    public var isMonocular: Bool = false
+    
     public lazy var leftMediaSphereNode: MediaSphereNode = {
         let node = MediaSphereNode()
         node.categoryBitMask = CategoryBitMask.leftEye.rawValue

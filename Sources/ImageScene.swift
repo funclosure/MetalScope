@@ -28,7 +28,7 @@ public final class StereoSphericalImageScene: StereoSphericalMediaScene, ImageSc
             var rightImage: UIImage?
 
             if let image = image {
-                let imageSize = CGSize(width: image.size.width, height: image.size.height / 2)
+                let imageSize = CGSize(width: image.size.width, height: isMonocular ? image.size.height : image.size.height / 2)
 
                 UIGraphicsBeginImageContextWithOptions(imageSize, true, image.scale)
                 image.draw(at: .zero)
@@ -36,7 +36,7 @@ public final class StereoSphericalImageScene: StereoSphericalMediaScene, ImageSc
                 UIGraphicsEndImageContext()
 
                 UIGraphicsBeginImageContextWithOptions(imageSize, true, image.scale)
-                image.draw(at: CGPoint(x: 0, y: -imageSize.height))
+                image.draw(at: isMonocular ? .zero : CGPoint(x: 0, y: -imageSize.height))
                 rightImage = UIGraphicsGetImageFromCurrentImageContext()
                 UIGraphicsEndImageContext()
             }

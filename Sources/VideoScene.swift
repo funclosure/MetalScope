@@ -242,12 +242,12 @@ public final class StereoSphericalVideoScene: StereoSphericalMediaScene, VideoSc
             let halfHeight = playerTexture.height / 2
 
             if let leftTexture = leftSphereTexture {
-                let leftSphereRegion = MTLRegionMake2D(0, 0, playerTexture.width, halfHeight)
+                let leftSphereRegion = MTLRegionMake2D(0, 0, playerTexture.width, isMonocular ? playerTexture.height : halfHeight)
                 copyPlayerTexture(region: leftSphereRegion, to: leftTexture)
             }
 
             if let rightTexture = rightSphereTexture {
-                let rightSphereRegion = MTLRegionMake2D(0, halfHeight, playerTexture.width, halfHeight)
+                let rightSphereRegion = MTLRegionMake2D(0, isMonocular ? 0 : halfHeight, playerTexture.width, isMonocular ? playerTexture.height : halfHeight)
                 copyPlayerTexture(region: rightSphereRegion, to: rightTexture)
             }
 
