@@ -23,6 +23,8 @@ public final class OrientationNode: SCNNode {
     }
 
     public var deviceOrientationProvider: DeviceOrientationProvider? = DefaultDeviceOrientationProvider()
+    
+    public var isAutoRotate: Bool = true
 
     public var interfaceOrientationProvider: InterfaceOrientationProvider? = DefaultInterfaceOrientationProvider()
 
@@ -47,6 +49,9 @@ public final class OrientationNode: SCNNode {
     }
 
     public func updateDeviceOrientation(atTime time: TimeInterval = ProcessInfo.processInfo.systemUptime) {
+        guard isAutoRotate else {
+            return
+        }
         guard let rotation = deviceOrientationProvider?.deviceOrientation(atTime: time) else {
             return
         }
