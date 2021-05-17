@@ -101,6 +101,14 @@ public final class PanoramaView: UIView, SceneLoadable {
             interfaceOrientationUpdater.updateInterfaceOrientation()
         }
     }
+    
+    public func stopAutomaticInterfaceOrientationUpdates() {
+        interfaceOrientationUpdater.stopAutomaticInterfaceOrientationUpdates()
+    }
+    
+    public func startAutomaticInterfaceOrientationUpdates() {
+        interfaceOrientationUpdater.startAutomaticInterfaceOrientationUpdates()
+    }
 }
 
 extension PanoramaView: ImageLoadable {}
