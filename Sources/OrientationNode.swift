@@ -114,6 +114,28 @@ public final class OrientationNode: SCNNode {
         SCNTransaction.commit()
         SCNTransaction.unlock()
     }
+    
+    public func rotateTo(pitch: Float, yaw: Float) {
+        var eulerAngles = userRotationNode.eulerAngles
+        eulerAngles.x = pitch
+        eulerAngles.y = yaw
+
+        userRotationNode.eulerAngles = eulerAngles
+    }
+
+    public func rotateTo(pitch: Float, yaw: Float, animated: Bool, completionHanlder: (() -> Void)? = nil) {
+        SCNTransaction.lock()
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = 0.6
+        SCNTransaction.animationTimingFunction = CAMediaTimingFunction(controlPoints: 0.2, 0, 0, 1)
+        SCNTransaction.completionBlock = completionHanlder
+        SCNTransaction.disableActions = !animated
+
+        rotateTo(pitch: pitch, yaw: yaw)
+
+        SCNTransaction.commit()
+        SCNTransaction.unlock()
+    }
 
     /// Requests reset of rotation in the next rendering frame.
     ///
