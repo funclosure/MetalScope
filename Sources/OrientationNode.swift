@@ -115,15 +115,19 @@ public final class OrientationNode: SCNNode {
         SCNTransaction.unlock()
     }
     
-    public func rotateTo(pitch: Float, yaw: Float) {
+    public func rotateTo(pitch: Float?, yaw: Float?) {
         var eulerAngles = userRotationNode.eulerAngles
-        eulerAngles.x = pitch
-        eulerAngles.y = yaw
+        if let pitch = pitch {
+            eulerAngles.x = pitch
+        }
+        if let yaw = yaw {
+            eulerAngles.y = yaw
+        }
 
         userRotationNode.eulerAngles = eulerAngles
     }
 
-    public func rotateTo(pitch: Float, yaw: Float, animated: Bool, completionHanlder: (() -> Void)? = nil) {
+    public func rotateTo(pitch: Float?, yaw: Float?, animated: Bool, completionHanlder: (() -> Void)? = nil) {
         SCNTransaction.lock()
         SCNTransaction.begin()
         SCNTransaction.animationDuration = 0.6
