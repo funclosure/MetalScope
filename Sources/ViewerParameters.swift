@@ -10,23 +10,27 @@ public protocol ViewerParametersProtocol {
     var lenses: Lenses { get }
     var distortion: Distortion { get }
     var maximumFieldOfView: FieldOfView { get }
+    var nearZ: Float { get }
 }
 
 public struct ViewerParameters: ViewerParametersProtocol {
     public var lenses: Lenses
     public var distortion: Distortion
     public var maximumFieldOfView: FieldOfView
+    public var nearZ: Float
 
-    public init(lenses: Lenses, distortion: Distortion, maximumFieldOfView: FieldOfView) {
+    public init(lenses: Lenses, distortion: Distortion, maximumFieldOfView: FieldOfView, nearZ: Float) {
         self.lenses = lenses
         self.distortion = distortion
         self.maximumFieldOfView = maximumFieldOfView
+        self.nearZ = nearZ
     }
 
     public init(_ parameters: ViewerParametersProtocol) {
         self.lenses = parameters.lenses
         self.distortion = parameters.distortion
         self.maximumFieldOfView = parameters.maximumFieldOfView
+        self.nearZ = parameters.nearZ
     }
 }
 
