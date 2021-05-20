@@ -64,7 +64,7 @@ extension StereoParametersProtocol {
     }
 
     func projectionFromFrustum(_ left: Float, _ top: Float, _ right: Float, _ bottom: Float) -> SCNMatrix4 {
-        return SCNMatrix4FromGLKMatrix4(GLKMatrix4MakeFrustum(left, right, bottom, top, 1, 1000))
+        return SCNMatrix4FromGLKMatrix4(GLKMatrix4MakeFrustum(left, right, bottom, top, viewer.nearZ, 1000))
     }
 
     func viewport(for eye: Eye, inBounds bounds: CGRect = CGRect(x: 0, y: 0, width: 1, height: 1)) -> CGRect {

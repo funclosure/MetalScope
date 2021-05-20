@@ -21,13 +21,15 @@ extension ViewerModel: ViewerParametersProtocol {
             return ViewerParameters(
                 lenses: Lenses(separation: 0.060, offset: 0.035, alignment: .bottom, screenDistance: 0.042),
                 distortion: Distortion(k1: 0.441, k2: 0.156),
-                maximumFieldOfView: FieldOfView(outer: 40.0, inner: 40.0, upper: 40.0, lower: 40.0)
+                maximumFieldOfView: FieldOfView(outer: 40.0, inner: 40.0, upper: 40.0, lower: 40.0),
+                nearZ: 1
             )
         case .cardboardMay2015:
             return ViewerParameters(
                 lenses: Lenses(separation: 0.064, offset: 0.035, alignment: .bottom, screenDistance: 0.039),
                 distortion: Distortion(k1: 0.34, k2: 0.55),
-                maximumFieldOfView: FieldOfView(outer: 60.0, inner: 60.0, upper: 60.0, lower: 60.0)
+                maximumFieldOfView: FieldOfView(outer: 60.0, inner: 60.0, upper: 60.0, lower: 60.0),
+                nearZ: 1
             )
         case .custom(let parameters):
             return ViewerParameters(parameters)
@@ -44,5 +46,9 @@ extension ViewerModel: ViewerParametersProtocol {
 
     public var maximumFieldOfView: FieldOfView {
         return parameters.maximumFieldOfView
+    }
+    
+    public var nearZ: Float {
+        return parameters.nearZ
     }
 }
