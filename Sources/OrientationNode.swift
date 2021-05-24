@@ -140,6 +140,18 @@ public final class OrientationNode: SCNNode {
         SCNTransaction.commit()
         SCNTransaction.unlock()
     }
+    
+    public func rotateBy(pitch: Float?, yaw: Float?) {
+        var eulerAngles = userRotationNode.eulerAngles
+        if let pitch = pitch {
+            eulerAngles.x += pitch
+        }
+        if let yaw = yaw {
+            eulerAngles.y += yaw
+        }
+
+        userRotationNode.eulerAngles = eulerAngles
+    }
 
     /// Requests reset of rotation in the next rendering frame.
     ///
